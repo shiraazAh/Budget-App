@@ -1,0 +1,46 @@
+.budget-box {
+    text-align: center;
+}
+
+
+.budget-amount , .expense-amount, .income-amount {
+    margin-top: 0px;
+}
+
+.expense-box {
+    text-align: center;
+}
+
+.expense-title {
+    margin-bottom: 0px;
+    margin-top: 80px;
+}
+
+.income-box {
+    text-align: center;
+}
+
+.income-title {
+    margin-bottom: 0px;
+    margin-top: 80px;
+}
+
+.userbox {
+    text-align: center;
+}
+
+.button {
+    margin: auto;
+}
+
+.item-title, .expense-amount, .income-amount {
+    margin: auto;
+}
+
+.app-name {
+    margin-left: 100px;
+}
+
+
+
+
