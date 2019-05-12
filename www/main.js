@@ -171,6 +171,7 @@ var UIcontroller = (function () {
             document.querySelector(DOM.incomeLabel).textContent = obj.totIncome;
             per = obj.totPercentage;
             document.querySelector(".percent-age").textContent = per;
+            document.querySelector(".gauge").setAttribute("data-value-text", obj.totPercentage)
         },
         /*
         showPer: function(obj) {
@@ -265,6 +266,9 @@ var controller = (function (bugtCntrl, UICntrl) {
         //upadate budget
         updateBudget();
 
+        /*     to show that totperc is working
+        var x = document.querySelector(".gauge").getAttribute("data-value-text");
+        console.log(x); */
     };
 
     //delete Epense
@@ -316,8 +320,14 @@ var controller = (function (bugtCntrl, UICntrl) {
     return {
         init: function () {
             console.log("App Started");
+            UICntrl.showCalc({
+                totBudget: 0,
+                totIncome: 0,
+                totExpense: 0,
+                totPercentage: -1
+            });
             setupButtons();
-        }
+        },
     }
 
 
