@@ -171,7 +171,7 @@ var UIcontroller = (function () {
             document.querySelector(DOM.incomeLabel).textContent = obj.totIncome;
             per = obj.totPercentage;
             document.querySelector(".percent-age").textContent = per;
-            document.querySelector(".gauge").setAttribute("data-value-text", obj.totPercentage)
+            /* document.querySelector(".gauge").setAttribute("data-value-text", obj.totPercentage) */
         },
         /*
         showPer: function(obj) {
