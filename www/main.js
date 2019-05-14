@@ -5,18 +5,32 @@ var budgetController = (function () {
         this.id = id;
         this.description = description;
         this.value = value;
+        this.percentage = -1;
     };
 
-    var income = function (id, descriptiom, value) {
+    expenses.prototype.calcPercentage = function (totalIncome) {
+        if (totalIncome > 0){
+            this.percentage = Math.round((this.value / totalIncome) * 100);
+        } else {
+            this.percentage = -1;
+        }
+
+    };
+
+    expenses.prototype.getPercentage = function () {
+        return this.percentage;
+    };
+
+    var income = function (id, description, value) {
         this.id = id;
-        this.description = descriptiom;
+        this.description = description;
         this.value = value;
     };
 
     // calculate total inc and exp
     var calculateExpInc = function (type) {
       var sum = 0;
-      data.allItems[type].forEach( function (cur) {
+      data.allItems[type].forEach(function(cur) {
           sum += cur.value
       });
 
@@ -59,6 +73,7 @@ var budgetController = (function () {
             data.allItems[type].push(newItem);
             return newItem;
         },
+
         deleteItem: function(type, id) {
             var index, ids;
 
@@ -72,6 +87,7 @@ var budgetController = (function () {
                 data.allItems[type].splice(index, 1);
             };
         },
+
         calcItems: function() {
 
             calculateExpInc('exp');
@@ -88,6 +104,20 @@ var budgetController = (function () {
             }
 
         },
+
+        calculatePercentage: function() {
+            data.allItems.exp.forEach(function (cur) {
+                cur.calcPercentage(data.totalItems.inc);
+            });
+        },
+
+        getPercentages: function () {
+            var allPerc = data.allItems.exp.map(function (cur) {
+                return cur.getPercentage();
+            });
+            return allPerc;
+        },
+
         toGetBudget: function() {
             return{
                 totBudget: data.budget,
@@ -96,9 +126,9 @@ var budgetController = (function () {
                 totPercentage: data.percentage
             }
         },
+
         getData: function () {
             return data;
-            return totPercentage;
         }
     }
 
@@ -171,14 +201,14 @@ var UIcontroller = (function () {
             document.querySelector(DOM.incomeLabel).textContent = obj.totIncome;
             per = obj.totPercentage;
             document.querySelector(".percent-age").textContent = per;
-            /* document.querySelector(".gauge").setAttribute("data-value-text", obj.totPercentage) */
+            /*
+            if (obj.percentage > 0) {
+            document.querySelector(".gauge").setAttribute("data-value-text", obj.totPercentage)
+            } else {
+            document.querySelector(".gauge").textContent = '---'
+            */
         },
-        /*
-        showPer: function(obj) {
-            return{
-                ped: obj.totPercentage
-            }
-        },*/
+
         addListItem: function(obj, type){
             var html, newHtml, element;
                 // html content
@@ -234,16 +264,20 @@ var controller = (function (bugtCntrl, UICntrl) {
         UICntrl.showCalc(budget);
     };
 
-    /*
+
     var updateForPercentage = function () {
+
         //call calc
-        bugtCntrl.calcItems();
+        bugtCntrl.calculatePercentage();
+
         //return value
-        var budget = bugtCntrl.toGetBudget();
+        var percentages = bugtCntrl.getPercentages();
+
         //return value of percentage
-        document.getElementById("gauge-id").setAttribute("data-value-text", UICntrl.showPer(budget).ped);
+        console.log(percentages);
+
     };
-    */
+
 
     //add Expense call
     var addExpense = function() {
@@ -266,7 +300,10 @@ var controller = (function (bugtCntrl, UICntrl) {
         //upadate budget
         updateBudget();
 
-        /*     to show that totperc is working
+        //Update Percentage
+        updateForPercentage()
+
+        /*     to show that totpercentage is working
         var x = document.querySelector(".gauge").getAttribute("data-value-text");
         console.log(x); */
     };
@@ -290,6 +327,7 @@ var controller = (function (bugtCntrl, UICntrl) {
 
         // update the budget and show new budget
         updateBudget();
+
     };
 
     //add Income call
@@ -314,6 +352,9 @@ var controller = (function (bugtCntrl, UICntrl) {
 
         //upadate budget
         updateBudget();
+
+        //Update Percentage
+        updateForPercentage()
 
     };
 
