@@ -8,7 +8,6 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <!-- Color theme for statusbar -->
     <meta name="theme-color" content="#2196f3">
-
     <!-- Your app title -->
     <title>My App</title>
 
@@ -30,23 +29,12 @@
     <!-- Status bar overlay for full screen mode (PhoneGap) -->
     <div class="statusbar"></div>
 
-    <!-- Panels overlay-->
-    <div class="panel-overlay"></div>
-    <!-- Left panel with reveal effect-->
-    <div class="panel panel-left panel-reveal">
-        <div class="content-block">
-            <p>Left panel content goes here</p>
-        </div>
-    </div>
-
-    <!-- Views -->
-    <div class="views">
         <!-- Your main view, should have "view-main" class -->
         <div class="view view-main">
             <!-- Top Navbar for all (if needed add)-->
             <!-- Bottom Toolbar for all (if needed add)-->
             <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
-            <div class="page">
+            <div data-name="home" class="page">
                 <div class="navbar">
                     <div class="navbar-inner sliding">
                         <div class="left"></div>
@@ -139,7 +127,7 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="col text-align-center">
+                               <!-- <div class="col text-align-center">
                                     <div
                                             class="gauge gauge-init"
                                             id="gauge-id"
@@ -152,7 +140,7 @@
                                             data-label-text-color="#f44336"
                                             data-label-font-weight="700"
                                     ></div>
-                                </div>
+                                </div> -->
                                 <div class="percent-age"></div>
                             </div>
                         </div>

@@ -1,46 +1,32 @@
 .budget-box {
     text-align: center;
 }
+/* spacing them */
 
 
-.budget-amount , .expense-amount, .income-amount {
-    margin-top: 0px;
-}
-
-.expense-box {
-    text-align: center;
-}
-
-.expense-title {
-    margin-bottom: 0px;
-    margin-top: 80px;
-}
-
-.income-box {
-    text-align: center;
-}
-
-.income-title {
-    margin-bottom: 0px;
-    margin-top: 80px;
-}
-
-.userbox {
-    text-align: center;
+.list, .item-content {
+    background-color:;
 }
 
 .button {
     margin: auto;
 }
 
+.ul {
+
+}
+
 .item-title, .expense-amount, .income-amount {
     margin: auto;
 }
 
-.app-name {
-    margin-left: 100px;
+.page-content {
+    background-color:;
 }
 
+.navbar-inner {
+    margin-left: 35%;
+}
 
 
 

@@ -5,7 +5,7 @@ var myApp = new Framework7({
     // App root element
     root: '#app',
     // App Name
-    name: 'My App',
+    name: 'Budget',
     // App id
     id: 'com.myapp.test',
 
@@ -31,9 +31,6 @@ var myApp = new Framework7({
 
     // ... other parameters
 });
-
-
-
 
 // If we need to use custom DOM library, let's save it to $$ variable:
 var $$ = Dom7;
