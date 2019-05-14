@@ -155,6 +155,24 @@ var UIcontroller = (function () {
         blockInc: ".block-inc"
     };
 
+    var formatNumber = function(num, type) {
+        var numSplit, int, dec;
+        num = Math.abs(num);
+        num = num.toFixed(2);
+
+        numSplit = num.split(".");
+
+        int = numSplit[0];
+        if (int.length > 3) {
+            int = int.substr(0, int.length - 3) + ',' + int.substr(int.length - 3, 3);
+        }
+
+        dec = numSplit[1];
+
+        return(type === 'exp' ? '-' : '+') + ' ' + int + '.' + dec;
+
+    };
+
 
 //Getting value
     return {
@@ -195,10 +213,13 @@ var UIcontroller = (function () {
             fieldsArr[0].focus();
         },
         showCalc: function(obj){
-            var per;
-            document.querySelector(DOM.budgetLabel).textContent = obj.totBudget;
-            document.querySelector(DOM.expenseLabel).textContent = obj.totExpense;
-            document.querySelector(DOM.incomeLabel).textContent = obj.totIncome;
+            var type;
+
+            obj.totBudget > 0 ? type = 'inc' : type = 'exp';
+
+            document.querySelector(DOM.budgetLabel).textContent = formatNumber(obj.totBudget, type);
+            document.querySelector(DOM.expenseLabel).textContent = formatNumber(obj.totExpense,type);
+            document.querySelector(DOM.incomeLabel).textContent = formatNumber(obj.totIncome, type);
             per = obj.totPercentage;
             document.querySelector(".percent-age").textContent = per;
             /*
@@ -224,7 +245,7 @@ var UIcontroller = (function () {
                 //replace placeholder text with data
                 newHtml = html.replace('%id%', obj.id);
                 newHtml = newHtml.replace('%description%', obj.description);
-                newHtml = newHtml.replace('%value%', obj.value);
+                newHtml = newHtml.replace('%value%', formatNumber(obj.value, type));
 
             //Insert HTML into DOM
             document.querySelector(element).insertAdjacentHTML('beforeend', newHtml);
