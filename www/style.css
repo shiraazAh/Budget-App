@@ -1,39 +1,57 @@
+/* Top */
+.navbar {
+    background-color: navajowhite;
+}
+
+.navbar-inner {
+    margin-left: 35%;
+}
+
+
+/* Budget page */
+.page-content-budget {
+    background-image: linear-gradient(to top, rosybrown, navajowhite);
+}
+
 .budget-box {
     text-align: center;
 }
-/* spacing them */
-
 
 .list, .item-content {
-    background-color:;
+    background-color: burlywood;
+}
+
+.list {
+    border-style: solid;
+    border-color: white;
+    border-width: medium;
+    border-radius: 5px;
+}
+.budget-box {
+    text-align: center;
 }
 
 .button {
     margin: auto;
 }
 
-.ul {
-
-}
-
 .item-title, .expense-amount, .income-amount {
     margin: auto;
 }
-/* Page Background Colour */
+/* Expense Page */
 .page-content-expenses {
-    background-image: linear-gradient(to top, white, orangered); /* Standard syntax (must be last) */
+    background-image: linear-gradient(to top, palevioletred, orangered); /* Standard syntax (must be last) */
 }
 
+/* Income Page */
 .page-content-income {
-    background-image: linear-gradient(to top, white, yellowgreen);
+    background-image: linear-gradient(to top, lightgreen, yellowgreen);
 }
 
-.page-content-budget {
-    background-image: linear-gradient(to top, white, navajowhite);
-}
+/* Bottom */
 
-.navbar-inner {
-    margin-left: 35%;
+.toolbar {
+    background-color: rosybrown;
 }
 
 
