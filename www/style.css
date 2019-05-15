@@ -19,9 +19,17 @@
 .item-title, .expense-amount, .income-amount {
     margin: auto;
 }
+/* Page Background Colour */
+.page-content-expenses {
+    background-image: linear-gradient(to top, white, orangered); /* Standard syntax (must be last) */
+}
 
-.page-content {
-    background-color:;
+.page-content-income {
+    background-image: linear-gradient(to top, white, yellowgreen);
+}
+
+.page-content-budget {
+    background-image: linear-gradient(to top, white, navajowhite);
 }
 
 .navbar-inner {
