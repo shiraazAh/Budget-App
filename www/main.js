@@ -152,7 +152,8 @@ var UIcontroller = (function () {
         expenseContainer: ".expenses-list",
         incomeContainer: ".income-list",
         blockExp: ".block-exp",
-        blockInc: ".block-inc"
+        blockInc: ".block-inc",
+        dateContainer: ".budget-date"
     };
 
     var formatNumber = function(num, type) {
@@ -256,6 +257,20 @@ var UIcontroller = (function () {
             el = document.getElementById(selectorID);
             el.parentNode.removeChild(el)
         },
+        displayMonth: function() {
+          var totDate, month, year, months;
+
+          totDate = new Date();
+
+          month = totDate.getMonth();
+
+          year = totDate.getFullYear();
+
+          months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+          document.querySelector(DOM.dateContainer).textContent = months[month] + ' ' + year;
+        },
+
         DOMout: function () {
             return DOM;
         }
@@ -382,6 +397,7 @@ var controller = (function (bugtCntrl, UICntrl) {
     return {
         init: function () {
             console.log("App Started");
+            UICntrl.displayMonth();
             UICntrl.showCalc({
                 totBudget: 0,
                 totIncome: 0,
