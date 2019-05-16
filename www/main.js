@@ -297,19 +297,33 @@ var controller = (function (bugtCntrl, UICntrl) {
         document.querySelector(DOMstrings.inputIncType).addEventListener("click", addIncome);
         document.querySelector(DOMstrings.blockExp).addEventListener("click", deleteExpense);
         document.querySelector(DOMstrings.blockInc).addEventListener("click", deleteExpense);
-        document.querySelector(DOMstrings.expensesToolbar).addEventListener("click", function () {
+        /* For swiping
+        if (document.getElementById('tab-1').classList.contains('tab-active')){
+            document.querySelector('.navbar').classList.remove('greennavbar');
+            document.querySelector('.navbar').classList.add('rednavbar');
+            document.querySelector('.toolbar').classList.remove('greentoolbar');
+            document.querySelector('.toolbar').classList.add('redtoolbar');
+        };
+        */
+
+        document.querySelector(DOMstrings.expensesToolbar).addEventListener("mousemove", function () {
+            document.querySelector('.navbar').classList.remove('greennavbar');
+            document.querySelector('.navbar').classList.add('rednavbar');
             document.querySelector('.toolbar').classList.remove('greentoolbar');
             document.querySelector('.toolbar').classList.add('redtoolbar');
         });
         document.querySelector(DOMstrings.incomeToolbar).addEventListener("click", function () {
+            document.querySelector('.navbar').classList.remove('rednavbar');
+            document.querySelector('.navbar').classList.add('greennavbar');
             document.querySelector('.toolbar').classList.remove('redtoolbar');
             document.querySelector('.toolbar').classList.add('greentoolbar');
         });
         document.querySelector(DOMstrings.budgetToolbar).addEventListener("click", function () {
+            document.querySelector('.navbar').classList.remove('rednavbar');
+            document.querySelector('.navbar').classList.remove('greennavbar');
             document.querySelector('.toolbar').classList.remove('redtoolbar');
             document.querySelector('.toolbar').classList.remove('greentoolbar');
         });
-
     };
 
     //updateBudget

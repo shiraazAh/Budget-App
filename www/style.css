@@ -1,8 +1,13 @@
+/* Classes for navbar color change */
+
+.rednavbar { background-color: orangered !important; }
+
+.greennavbar { background-color: yellowgreen !important; }
+
+/* Classes for toolbar colour change */
 .redtoolbar { background-color: palevioletred !important; }
 
 .greentoolbar { background-color: lightgreen !important; }
-
-.browntoolbar { background-color: rosybrown !important; }
 
 /* Top */
 .navbar {
