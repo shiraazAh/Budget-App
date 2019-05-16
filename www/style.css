@@ -1,3 +1,9 @@
+.redtoolbar { background-color: palevioletred !important; }
+
+.greentoolbar { background-color: lightgreen !important; }
+
+.browntoolbar { background-color: rosybrown !important; }
+
 /* Top */
 .navbar {
     background-color: navajowhite;
