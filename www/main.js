@@ -153,7 +153,10 @@ var UIcontroller = (function () {
         incomeContainer: ".income-list",
         blockExp: ".block-exp",
         blockInc: ".block-inc",
-        dateContainer: ".budget-date"
+        dateContainer: ".budget-date",
+        expensesToolbar: ".expenses-tab",
+        incomeToolbar: ".income-tab",
+        budgetToolbar: ".budget-tab"
     };
 
     var formatNumber = function(num, type) {
@@ -172,6 +175,12 @@ var UIcontroller = (function () {
 
         return(type === 'exp' ? '-' : '+') + ' ' + int + '.' + dec;
 
+    };
+
+    var nodeListForEach = function(list, callback) {
+        for (var i = 0; i < list.length; i++) {
+            callback(list[i], i);
+        }
     };
 
 
@@ -288,6 +297,19 @@ var controller = (function (bugtCntrl, UICntrl) {
         document.querySelector(DOMstrings.inputIncType).addEventListener("click", addIncome);
         document.querySelector(DOMstrings.blockExp).addEventListener("click", deleteExpense);
         document.querySelector(DOMstrings.blockInc).addEventListener("click", deleteExpense);
+        document.querySelector(DOMstrings.expensesToolbar).addEventListener("click", function () {
+            document.querySelector('.toolbar').classList.remove('greentoolbar');
+            document.querySelector('.toolbar').classList.add('redtoolbar');
+        });
+        document.querySelector(DOMstrings.incomeToolbar).addEventListener("click", function () {
+            document.querySelector('.toolbar').classList.remove('redtoolbar');
+            document.querySelector('.toolbar').classList.add('greentoolbar');
+        });
+        document.querySelector(DOMstrings.budgetToolbar).addEventListener("click", function () {
+            document.querySelector('.toolbar').classList.remove('redtoolbar');
+            document.querySelector('.toolbar').classList.remove('greentoolbar');
+        });
+
     };
 
     //updateBudget
