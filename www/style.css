@@ -1,13 +1,13 @@
 /* Classes for navbar color change */
 
-.rednavbar { background-color: orangered !important; }
+.rednavbar { background-color: lightsalmon !important; }
 
-.greennavbar { background-color: yellowgreen !important; }
+.greennavbar { background-color: lightgreen !important; }
 
 /* Classes for toolbar colour change */
 .redtoolbar { background-color: palevioletred !important; }
 
-.greentoolbar { background-color: lightgreen !important; }
+.greentoolbar { background-color: mediumseagreen !important; }
 
 /* Top */
 .navbar {
@@ -27,6 +27,23 @@
 .budget-box {
     text-align: center;
 }
+
+/*
+.bug {
+    --f7-input-bg-color: red;
+    --f7-label-font-weight: 400;
+    --f7-label-line-height: 1.2;
+    --f7-input-error-text-color: #ff3b30;
+    --f7-input-error-font-size: 12px;
+    --f7-input-error-line-height: 1.4;
+    --f7-input-error-font-weight: 400;
+    --f7-input-info-font-size: 12px;
+    --f7-input-info-line-height: 1.4;
+    --f7-input-outline-height: 40px;
+    --f7-input-outline-border-color: #999;
+    --f7-input-outline-border-radius: 4px;
+    --f7-input-outline-padding-horizontal: 12px;
+*/
 
 .list, .item-content {
     background-color: burlywood;
@@ -51,12 +68,12 @@
 }
 /* Expense Page */
 .page-content-expenses {
-    background-image: linear-gradient(to top, palevioletred, orangered); /* Standard syntax (must be last) */
+    background-image: linear-gradient(to top, palevioletred, lightsalmon); /* Standard syntax (must be last) */
 }
 
 /* Income Page */
 .page-content-income {
-    background-image: linear-gradient(to top, lightgreen, yellowgreen);
+    background-image: linear-gradient(to top, mediumseagreen, lightgreen);
 }
 
 /* Bottom */
