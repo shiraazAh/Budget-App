@@ -8,7 +8,7 @@ var myApp = new Framework7({
     name: 'Budget',
     // App id
     id: 'com.myapp.test',
-
+    
     // Enable swipe panel
     panel: {
         swipe: 'left',
@@ -21,11 +21,15 @@ var myApp = new Framework7({
         },
         {
             path: '/Expenses/',
-            componentUrl: 'Expenses.html',
+            url: 'Expenses.html',
         },
         {
             path: '/index/',
             url: 'index.html'
+        },
+        {
+            path: '/Expee/',
+            pageName: 'Expee'
         }
     ],
 
