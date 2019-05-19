@@ -66,6 +66,12 @@
 .item-title, .expense-amount, .income-amount {
     margin: auto;
 }
+
+.expense-list ul li {
+    margin: auto 0;
+    background-color: indianred;
+
+}
 /* Expense Page */
 .page-content-expenses {
     background-image: linear-gradient(to top, palevioletred, lightsalmon); /* Standard syntax (must be last) */
@@ -81,6 +87,8 @@
 .toolbar {
     background-color: rosybrown;
 }
+
+
 
 
 
