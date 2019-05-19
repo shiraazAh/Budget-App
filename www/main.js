@@ -228,7 +228,7 @@ var UIcontroller = (function () {
             obj.totBudget > 0 ? type = 'inc' : type = 'exp';
 
             document.querySelector(DOM.budgetLabel).textContent = formatNumber(obj.totBudget, type);
-            document.querySelector(DOM.expenseLabel).textContent = formatNumber(obj.totExpense,type);
+            document.querySelector(DOM.expenseLabel).textContent = formatNumber(obj.totExpense, 'exp');
             document.querySelector(DOM.incomeLabel).textContent = formatNumber(obj.totIncome, type);
             per = obj.totPercentage;
             document.querySelector(".percent-age").textContent = per;
@@ -306,7 +306,7 @@ var controller = (function (bugtCntrl, UICntrl) {
         };
         */
 
-        document.querySelector(DOMstrings.expensesToolbar).addEventListener("mousemove", function () {
+        document.querySelector(DOMstrings.expensesToolbar).addEventListener("click", function () {
             document.querySelector('.navbar').classList.remove('greennavbar');
             document.querySelector('.navbar').classList.add('rednavbar');
             document.querySelector('.toolbar').classList.remove('greentoolbar');
@@ -434,12 +434,6 @@ var controller = (function (bugtCntrl, UICntrl) {
         init: function () {
             console.log("App Started");
             UICntrl.displayMonth();
-            UICntrl.showCalc({
-                totBudget: 0,
-                totIncome: 0,
-                totExpense: 0,
-                totPercentage: -1
-            });
             setupButtons();
         },
     }
