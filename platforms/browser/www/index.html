@@ -44,16 +44,17 @@
                 </div>
                 <div class="toolbar tabbar toolbar-bottom">
                     <div class="toolbar-inner">
-                        <a href="#tab-1" class="tab-link tab-link-active">Budget</a>
-                        <a href="#tab-2" class="tab-link">Expenses</a>
-                        <a href="#tab-3" class="tab-link">Incomes</a>
+                        <a href="#tab-1" class="tab-link budget-tab tab-link-active">Budget</a>
+                        <a href="#tab-2" class="tab-link expenses-tab">Expenses</a>
+                        <a href="#tab-3" class="tab-link income-tab">Incomes</a>
                     </div>
                 </div>
-                <div class="tabs-swipeable-wrap">
+                <div class="tabs-animated-wrap">
                     <div class="tabs">
-                        <div id="tab-1" class="page-content tab tab-active">
+                        <div id="tab-1" class="page-content page-content-budget tab tab-active">
                             <div class="block">
                                 <div class="budget-box">
+                                    <h4 class="budget-date"></h4>
                                     <h1 class="budget-title">Budget</h1>
                                     <h2 class="budget-amount">0</h2>
                                 </div>
@@ -144,7 +145,7 @@
                                 <div class="percent-age"></div>
                             </div>
                         </div>
-                        <div id="tab-2" class="page-content tab">
+                        <div id="tab-2" class="page-content page-content-expenses tab">
                             <div class="block-exp">
                                 <div class="data-table data-table-init card">
                                     <!-- <div class="card-header">
@@ -183,7 +184,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="tab-3" class="page-content tab">
+                        <div id="tab-3" class="page-content page-content-income tab">
                             <div class="block-inc">
                                 <div class="data-table data-table-init card">
                                     <!-- <div class="card-header">

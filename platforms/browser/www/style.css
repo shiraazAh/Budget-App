@@ -1,31 +1,68 @@
+/* Classes for navbar color change */
+
+.rednavbar { background-color: lightsalmon !important; }
+
+.greennavbar { background-color: lightgreen !important; }
+
+/* Classes for toolbar colour change */
+.redtoolbar { background-color: palevioletred !important; }
+
+.greentoolbar { background-color: mediumseagreen !important; }
+
+/* Top */
+.navbar {
+    background-color: navajowhite;
+}
+
+.navbar-inner {
+    margin-left: 35%;
+}
+
+
+/* Budget page */
+.page-content-budget {
+    background-image: linear-gradient(to top, rosybrown, navajowhite);
+}
+
 .budget-box {
     text-align: center;
 }
-/* spacing them */
-
 
 .list, .item-content {
-    background-color:;
+    background-color: burlywood;
+}
+
+.list {
+    border-style: solid;
+    border-color: white;
+    border-width: medium;
+    border-radius: 5px;
+}
+.budget-box {
+    text-align: center;
 }
 
 .button {
     margin: auto;
 }
 
-.ul {
-
-}
-
 .item-title, .expense-amount, .income-amount {
     margin: auto;
 }
-
-.page-content {
-    background-color:;
+/* Expense Page */
+.page-content-expenses {
+    background-image: linear-gradient(to top, palevioletred, lightsalmon); /* Standard syntax (must be last) */
 }
 
-.navbar-inner {
-    margin-left: 35%;
+/* Income Page */
+.page-content-income {
+    background-image: linear-gradient(to top, mediumseagreen, lightgreen);
+}
+
+/* Bottom */
+
+.toolbar {
+    background-color: rosybrown;
 }
 
 
