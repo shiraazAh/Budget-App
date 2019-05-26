@@ -339,6 +339,8 @@ var controller = (function (bugtCntrl, UICntrl) {
         var budget = bugtCntrl.toGetBudget();
         //Show in UI
         UICntrl.showCalc(budget);
+        //Local Storage 
+        bugtCntrl.addToLocal(budget);
     };
 
 
