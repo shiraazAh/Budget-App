@@ -118,6 +118,11 @@ var budgetController = (function () {
             return allPerc;
         },
 
+        addToLocal: function(obj) {
+            localStorage.setItem('budgety', obj.totBudget);
+            console.log(localStorage.getItem('budgety'));
+        },
+
         toGetBudget: function() {
             return{
                 totBudget: data.budget,
