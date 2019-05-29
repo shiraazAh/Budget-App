@@ -120,7 +120,8 @@ var budgetController = (function () {
 
         addToLocal: function(obj) {
             localStorage.setItem('budgety', obj.totBudget);
-            console.log(localStorage.getItem('budgety'));
+            localStorage.setItem('expensy', obj.totExpense);
+            localStorage.setItem('incomy', obj.totIncome);
         },
 
         toGetBudget: function() {
@@ -442,10 +443,14 @@ var controller = (function (bugtCntrl, UICntrl) {
             console.log("App Started");
             UICntrl.displayMonth();
             setupButtons();
-        },
+            UICntrl.showCalc({
+                totBudget: localStorage.getItem('budgety'),
+                totIncome: localStorage.getItem('incomy'),
+                totExpense: localStorage.getItem('expensy'),
+                totPercentage: -1
+            });
+        }
     }
-
-
     //clear fields
 
     //add UI
