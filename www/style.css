@@ -45,7 +45,7 @@
     --f7-input-outline-padding-horizontal: 12px;
 */
 
-.list, .item-content {
+.list, .item-content-link, .accordion-item-content {
     background-color: burlywood;
 }
 
