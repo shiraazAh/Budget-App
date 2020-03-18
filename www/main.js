@@ -77,9 +77,7 @@ var budgetController = (function () {
         deleteItem: function(type, id) {
             var index, ids;
 
-            ids = data.allItems[type].map(function (current) {
-                return current.id;
-            });
+            ids = data.allItems[type].map(current => current.id);
 
             index = ids.indexOf(id);
 
